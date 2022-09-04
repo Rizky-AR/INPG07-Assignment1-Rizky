@@ -5,9 +5,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Kampus Merdeka - Assignment 1</title>
+    <title>Kampus Merdeka - Assignment 2</title>
 </head>  
-<body>
+<body> 
+    <div id="container"></div>
     <div class="heading">
         <br>
         <a class="link" href="#">HOME</a>
@@ -21,81 +22,118 @@
     <div class="box-1">
         <div class="box-2">
             <img class="img" src="images/logo_developer.png" border alt="Profile Picture">
+        <div class="content-1">    
+                <p class=text-font1 id="text-nama">Rizky Alparez Rati</p>
+                <p class="text-font2" id="text-role">Front End Designer</p>
+                <button id="test-button"class="btn btn-primary btn-md">EDIT</button>
+                <a href="#" class="btn btn-success btn-md">Resume</a> 
+        </div> 
+        <div class="content-3">
+                    <hr><p>Availability <tab1 class="text-font3" id="text-availability">Full Time</p>
+                    <p>Usia <tab2 id="text-usia" class="text-font3">20</p>
+                    <p>Lokasi<tab3 id="text-lokasi" class="text-font3">Palangka Raya, Indonesia</p>
+                    <p>Pengalaman<tab4 id="text-exp" class="text-font3">1</p>
+                    <p>Email<tab5 id="text-email" class="text-font3">Developer@gmail.com</p><hr>
+       </div>
 
-    <div class="bio">
-                <div class="content-1">
-                    Rizky Alparez Rati
-                 <div class="content-2">
-                        Front End Designer  
-                    <br><br>
-                    <a href="#" class="btn btn-primary btn-md">Kontak</a>
-                    <a href="#" class="btn btn-success btn-md">Resume</a>
-                    </div> 
-                    <div class="content-3">
-                    Availability<br>
-                    Usia</br>
-                    Lokasi<br>
-                    Pengalaman<br> 
-                    Email<br>
-                        
-                </div>
-                <div class="content-4">
-                    Full Time<br>
-                    20</br>
-                    Palangka Raya, Indonesia<br>
-                    1<br> 
-                    Developer@gmail.com<br>
-                        
-                </div>
-                    </div>
-                    
-
-               
-            </div>
-        </div>
-    
-
-        <div class="box-3">
-                    <form>
+ <div class="box-3">
+        <form id="form-nama" onsubmit="handleSubmit(event)">
                         <div class="form-group position-relative">
-                            <label for="nama">Nama</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Nama Anda">
+                            <hr><p class="text-font1" position="center">Section Form</p><hr>
+                            <label for="name">Nama</label>
+                                <input name="name" id="input-name" type="text" class="form-control" placeholder="Masukkan Nama Anda" />
                             </div> 
             
                         <div class="form-group position-relative">
                             <label for="role">Role</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Role Anda">
+                                <input name="role" id="input-role"  type="text" class="form-control" placeholder="Masukkan Role Anda" />
                             </div>
 
                          <div class="form-group position-relative">
                              <label for="availability">Availability</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Availability Anda">
+                                <input name="availability" id="input-availability" type="text" class="form-control" placeholder="Masukkan Availability Anda" />
                             </div>
                         
                         <div class="form-group position-relative">
                             <label for="age">Age</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Age Anda">
+                                <input name="usia" id="input-usia" type="text" class="form-control" placeholder="Masukkan Age Anda" />
                             </div>
 
                         <div class="form-group position-relative">
                             <label for="lokasi">Lokasi</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Lokasi Anda">
+                                <input name="lokasi" id="input-lokasi" type="text" class="form-control" placeholder="Masukkan Lokasi Anda" />
                             </div>
 
                         <div class="form-group position-relative">
                             <label for="exp">Your Experience</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Experience Anda">
+                                <input name="exp" id="input-exp" type="text" class="form-control" placeholder="Masukkan Experience Anda" />
                             </div>
 
                         <div class="form-group position-relative">
                             <label for="email">Email</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Email Anda">
+                                <input name="email" id="input-email" type="text" class="form-control" placeholder="Masukkan Email Anda" />
                             </div>
-                        <button type="submit"  class="btn btn-success btn-block" width="100%">SUBMIT</button>
+                        <button type="submit" id="btn-sbmt" class="btn btn-success btn-block" width="100%">SUBMIT</button>
                     </form>
-                </div>
+                </div>  
             </div>               
-            </h2>
-        </div>
-            </div>
+
+        <script>
+            var textNama = document.getElementById('text-nama')
+            var textRole = document.getElementById('text-role')
+            var textAvailability = document.getElementById('text-availability')
+            var textUsia = document.getElementById('text-usia')
+            var textLokasi = document.getElementById('text-lokasi')
+            var textExp = document.getElementById('text-exp')
+            var textEmail = document.getElementById('text-email')
+            document.getElementById('input-name').value = textNama.innerText
+            document.getElementById('input-role').value = textRole.innerText
+            document.getElementById('input-availability').value = textAvailability.innerText
+            document.getElementById('input-usia').value = textUsia.innerText
+            document.getElementById('input-lokasi').value = textLokasi.innerText
+            document.getElementById('input-exp').value = textExp.innerText
+            document.getElementById('input-email').value = textEmail.innerText
+    
+            function handleSubmit(event) {
+                var inputNama = document.getElementById('input-name')
+                var inputRole = document.getElementById('input-role')
+                var inputAvailability = document.getElementById('input-availability')
+                var inputUsia = document.getElementById('input-usia')
+                var inputLokasi = document.getElementById('input-lokasi')
+                var inputExp = document.getElementById('input-exp')
+                var inputEmail = document.getElementById('input-email')
+                document.getElementById('text-nama').innerText = inputNama.value
+                document.getElementById('text-role').innerText = inputRole.value
+                document.getElementById('text-availability').innerText = inputAvailability.value
+                document.getElementById('text-usia').innerText = inputUsia.value
+                document.getElementById('text-lokasi').innerText = inputLokasi.value
+                document.getElementById('text-exp').innerText = inputExp.value
+                document.getElementById('text-email').innerText = inputEmail.value
+               
+                const text1 = document.getElementById('form-nama')
+                const display = text1.style.display
+                if (display == 'block') {
+                    console.log(display, 'display dalam if')
+                    text1.style.display = 'none'
+                } else {
+                    console.log(display, 'display dalam else')
+                    text1.style.display = 'block'
+                }
+                event.preventDefault()
+            }
+    
+            const buttonTest = document.getElementById('test-button')
+            buttonTest.addEventListener('click', function (){
+                const text1 = document.getElementById('form-nama')
+                const display = text1.style.display
+                if (display == 'block') {
+                    console.log(display, 'display dalam if')
+                    text1.style.display = 'none'
+                } else {
+                    console.log(display, 'display dalam else')
+                    text1.style.display = 'block'
+                }
+                console.log(display, 'display')
+            })
+      </script>    
 </body>
